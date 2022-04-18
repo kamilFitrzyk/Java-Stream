@@ -15,12 +15,12 @@ class StreamExampleTest {
     @BeforeEach
     void setUp() {
         Employee employee1 = new Employee("Dawid","Laskowski",30, List.of("Java","PHP"));
-        Employee employee2 = new Employee("Kamil","P",30, List.of("GIT","PHP"));
-        Employee employee3 = new Employee("Zygmund","Paralowski",30, List.of("Linux","PHP"));
-        Employee employee4 = new Employee("Karol","Kacperczyk",30, List.of("Java","Spring","Hibernate"));
-        Employee employee5 = new Employee("Katarzyna","Penetretion",30, List.of("Java","PHP"));
-        Employee employee6 = new Employee("Aneta","Pusowka",30, List.of("Pascale","PHP"));
-        Employee employee7 = new Employee("Krzysztof","Nakowski",30, List.of("Java","PHP"));
+        Employee employee2 = new Employee("Kamil","P",28, List.of("GIT","PHP"));
+        Employee employee3 = new Employee("Zygmund","Paralowski",25, List.of("Linux","PHP"));
+        Employee employee4 = new Employee("Karol","Kacperczyk",40, List.of("Java","Spring","Hibernate"));
+        Employee employee5 = new Employee("Katarzyna","Penetretion",34, List.of("Java","PHP"));
+        Employee employee6 = new Employee("Aneta","Pusowka",32, List.of("Pascale","PHP"));
+        Employee employee7 = new Employee("Krzysztof","Nakowski",31, List.of("Java","PHP"));
 
         employees.add(employee1);
         employees.add(employee2);
@@ -150,4 +150,73 @@ class StreamExampleTest {
         System.out.println(zNoneMatch);
     }
 
+    @Test
+    void reduceOperation() {
+        Integer sumOfAllAges = employees.stream()
+                .map(Employee::getAge)
+                .reduce(Integer::sum)
+                .get();
+        System.out.println(sumOfAllAges);
+
+        Integer sumOfAllAges2 = employees.stream()
+                .map(Employee::getAge)
+                .reduce(0, Integer::sum);
+
+        System.out.println(sumOfAllAges2);
+
+        Integer sumOfAllAges3 = employees.stream()
+                .reduce(0, (age, employees) -> age + employees.getAge(), Integer::sum);
+
+        System.out.println(sumOfAllAges3);
+
+        String allNames = employees.stream()
+                .map(Employee::getFirstName)
+                .reduce((name1, name2) -> name1 + ", " + name2)
+                .get();
+
+        System.out.println(allNames);
+    }
+
+    @Test
+    void takeWhileOperation() {
+        //first sorted stream
+        employees.stream()
+                .sorted(Comparator.comparing(Employee::getAge))
+                .takeWhile(employee -> employee.getAge() < 30)
+                .forEach(System.out::println);
+    }
+
+    @Test
+    void dropWhileOperation() {
+        //first sorted stream
+        employees.stream()
+                .sorted(Comparator.comparing(Employee::getAge))
+                .dropWhile(employee -> employee.getAge() < 30)
+                .forEach(System.out::println);
+    }
+
+    @Test
+    void forEachOrdered() {
+        String sentence = "Jak nauczyć się programowania";
+
+        sentence.chars().forEach(s -> System.out.print((char)s));
+        System.out.println();
+        sentence.chars().parallel().forEach(s -> System.out.print((char) s));
+        System.out.println();
+        sentence.chars().parallel().forEachOrdered(s -> System.out.print((char) s));
+        System.out.println();
+    }
+
+    @Test
+    void peekOperation() {
+        //support debugging
+
+        List<Employee> newEmployees = employees.stream()
+                .peek(employee -> employee.setFirstName("Kamil"))
+                .collect(Collectors.toList());
+
+        System.out.println(newEmployees);
+        System.out.println();
+        System.out.println(employees);
+    }
 }
