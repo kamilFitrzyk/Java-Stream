@@ -1,4 +1,4 @@
-package com.stream;
+package com.java.stream;
 
 import lombok.*;
 

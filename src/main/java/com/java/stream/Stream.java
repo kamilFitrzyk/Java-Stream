@@ -1,4 +1,4 @@
-package com.stream;
+package com.java.stream;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,8 +8,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
-class StreamExampleTest {
-
+public class Stream {
     List<Employee> employees = new ArrayList<>();
 
     @BeforeEach
