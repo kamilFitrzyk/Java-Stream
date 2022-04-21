@@ -3,6 +3,7 @@ package com.java.Collectors;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Queue;
 import java.util.stream.Collectors;
 
 public class Grouping {
@@ -27,6 +28,8 @@ public class Grouping {
         teams.add("Spain");
         teams.add("Sweden");
         teams.add("Sweden");
+
+
 
         Map<Integer, List<String>> collect1 = teams.stream()
                 .collect(Collectors.groupingBy(String::length));

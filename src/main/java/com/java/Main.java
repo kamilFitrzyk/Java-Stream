@@ -12,7 +12,17 @@ public class Main {
 //        Joining.run();
 //        CountingSummingAverage.run();
 //        Summarizing.run();
-        Grouping.run();
+//        Grouping.run();
+
+
+
+        /*
+        * Variables
+        * */
+
+        Variable.run();
+
+
     }
 
 
