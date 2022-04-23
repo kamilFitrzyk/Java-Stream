@@ -1,5 +1,8 @@
 package com.java;
 
+import java.math.BigDecimal;
+import java.util.Arrays;
+
 public class Variable {
 
     public static void run() {
@@ -46,6 +49,50 @@ public class Variable {
 
         greeting.trim();//usuwa białe znaki z poczatku
         greeting.strip();//usuwa białe znaki z konca
+
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("k");
+        builder.append("a");
+        builder.append("m");
+        builder.append("i");
+        builder.append("l");
+
+        String completedString = builder.toString();
+        System.out.println(completedString);
+
+        System.out.println(BigDecimal.TEN);
+        System.out.println(BigDecimal.ZERO);
+
+        BigDecimal a =  BigDecimal.valueOf(10000);
+        BigDecimal b =  BigDecimal.valueOf(20000);
+        BigDecimal c = a.add(b);
+        BigDecimal d = c.multiply(b.add(BigDecimal.valueOf(2)));
+        System.out.println(d);
+
+        System.out.println(a.compareTo(b));
+
+        int[] table = new int[5];
+        System.out.println(table[0]);
+
+        boolean[] booleansTable = new boolean[3];
+        System.out.println(booleansTable[0]);
+
+        String[] names = new String[10];
+        System.out.println(names[0]);
+
+        System.out.println(table.length);
+        System.out.println(names.length);
+
+        for (int element : table) System.out.println(element);
+        System.out.println(Arrays.toString(table));
+
+        int[] smallPrimes = { 4, 6, 2, 6, 7};
+        int[] luckyNumbers = smallPrimes;
+        luckyNumbers[1] = 12;
+        System.out.println(smallPrimes[1]);
+        int[] copiedLuckyNumbers = Arrays.copyOf(luckyNumbers, luckyNumbers.length);
+
 
 
     }

@@ -1,12 +1,12 @@
 package com.java;
 
-import com.java.Collectors.*;
+import java.io.IOException;
 
 public class Main {
 
 
 
-    public static void  main(String[] args) {
+    public static void  main(String[] args) throws IOException {
 
 //        ToListSetMap.run();
 //        Joining.run();
@@ -20,7 +20,11 @@ public class Main {
         * Variables
         * */
 
-        Variable.run();
+//        Variable.run();
+//        PrintF.run();
+//        Files.run();
+//        Array.run();
+            DateLocalDate.run();
 
 
     }
