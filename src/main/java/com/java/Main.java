@@ -39,9 +39,9 @@ public class Main {
 //        DateLocalDate.run();
 //        RequireNonNull.run();
 
-        EmployeeRun.run();
+        //EmployeeRun.run();
 
-
+        com.java.equals.EqualsTest.run();
 
 
 
