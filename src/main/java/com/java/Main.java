@@ -2,6 +2,7 @@ package com.java;
 
 import com.java.Class.Employee;
 import com.java.Class.EmployeeRun;
+import com.java.enumTest.EnumTest;
 
 import java.io.IOException;
 import java.text.NumberFormat;
@@ -41,8 +42,8 @@ public class Main {
 
         //EmployeeRun.run();
 
-        com.java.equals.EqualsTest.run();
-
+//        com.java.equals.EqualsTest.run();
+        EnumTest.run();
 
 
 
