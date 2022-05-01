@@ -2,13 +2,13 @@ package com.java;
 
 import com.java.Class.Employee;
 import com.java.Class.EmployeeRun;
+import com.java.arrayList.ArrayList;
 import com.java.binarySearch.BinarySearch;
 import com.java.enumTest.EnumTest;
 
 import java.io.IOException;
 import java.text.NumberFormat;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
@@ -51,21 +51,19 @@ public class Main {
 //        EnumTest.run();
 
         //Binary Search
+//        ArrayList<Integer> array = new ArrayList<>();
+//        array.add(4);
+//        array.add(5);
+//        array.add(7);
+//        array.add(1);
+//        array.add(10);
+//        array.add(9);
+//        array.add(8);
+//        array.add(7);
+//        Collections.sort(array);
+//        System.out.println(BinarySearch.binarySearch(array, 7));
 
-        ArrayList<Integer> array = new ArrayList<>();
-        array.add(4);
-        array.add(5);
-        array.add(7);
-        array.add(1);
-        array.add(10);
-        array.add(9);
-        array.add(8);
-        array.add(7);
-
-        Collections.sort(array);
-
-        System.out.println(BinarySearch.binarySearch(array, 7));
-
+        ArrayList.run();
 
     }
 
