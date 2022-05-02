@@ -63,7 +63,21 @@ public class Main {
 //        Collections.sort(array);
 //        System.out.println(BinarySearch.binarySearch(array, 7));
 
-        ArrayList.run();
+//        ArrayList.run();
+
+        //Opakowanie obiektów
+
+        Integer n = 1;
+        Double x = 2.0;
+        System.out.println(true ? n : x); // 1.0
+
+        int n_ = 1;
+        double x_ = 2.0;
+        System.out.println(true ? n_ : x_); // 1.0
+
+        String a = "123";
+        int number = Integer.parseInt(a);
+
 
     }
 
