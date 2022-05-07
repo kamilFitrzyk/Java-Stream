@@ -3,6 +3,7 @@ package com.java;
 import com.java.Class.Employee;
 import com.java.Class.EmployeeRun;
 import com.java.binarySearch.BinarySearch;
+import com.java.collection.LinkedListTest;
 import com.java.enumTest.EnumTest;
 import com.java.interfaces.clone.CloneTest;
 import com.java.interfaces.timer.TimerTest;
@@ -69,7 +70,11 @@ public class Main {
 
 
 //        TimerTest.run();
-        CloneTest.run();
+//        CloneTest.run();
+        LinkedListTest.run();
+
+
+
     }
 
 
