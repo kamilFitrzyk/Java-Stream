@@ -1,4 +1,4 @@
-package com.java.enumTest;
+package com.java.operation.enumTest;
 
 import java.util.Scanner;
 

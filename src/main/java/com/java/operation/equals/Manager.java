@@ -1,4 +1,4 @@
-package com.java.equals;
+package com.java.operation.equals;
 
 public class Manager extends Employee {
 

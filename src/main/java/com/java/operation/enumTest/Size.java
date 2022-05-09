@@ -1,4 +1,4 @@
-package com.java.enumTest;
+package com.java.operation.enumTest;
 
 public enum Size {
     SMALL("S"), MEDIUM("M"), LARGE("L"), EXTRA_LARGE("XL");

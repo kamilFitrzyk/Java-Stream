@@ -1,4 +1,4 @@
-package com.java.stream;
+package com.java.interfaces.stream;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

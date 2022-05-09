@@ -1,21 +1,8 @@
 package com.java;
 
-import com.java.Class.Employee;
-import com.java.Class.EmployeeRun;
-import com.java.binarySearch.BinarySearch;
 import com.java.collection.LinkedListTest;
-import com.java.enumTest.EnumTest;
-import com.java.interfaces.clone.CloneTest;
-import com.java.interfaces.timer.TimerTest;
 
 import java.io.IOException;
-import java.text.NumberFormat;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class Main {
 
@@ -65,7 +52,7 @@ public class Main {
 //        double x_ = 2.0;
 //        System.out.println(true ? n_ : x_); // 1.0
 //
-//        String a = "123";
+//        String a = "123";if ()
 //        int number = Integer.parseInt(a);
 
 
