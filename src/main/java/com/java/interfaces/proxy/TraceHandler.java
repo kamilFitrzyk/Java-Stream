@@ -1,8 +1,9 @@
 package com.java.interfaces.proxy;
 
+import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 
-public class TraceHandler {
+public class TraceHandler implements InvocationHandler {
 
     private Object target;
 

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class ProxyTest {
-    public static void run(String[] args)
+    public static void run()
     {
         var elements = new Object[1000];
 
