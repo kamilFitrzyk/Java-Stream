@@ -15,7 +15,7 @@ public class Stream {
         Employee employee2 = new Employee("Kamil","P",28, List.of("GIT","PHP"));
         Employee employee3 = new Employee("Zygmund","Paralowski",25, List.of("Linux","PHP"));
         Employee employee4 = new Employee("Karol","Kacperczyk",40, List.of("Java","Spring","Hibernate"));
-        Employee employee5 = new Employee("Katarzyna","Penetretion",34, List.of("Java","PHP"));
+        Employee employee5 = new Employee("Kamil","Penetretion",34, List.of("Java","PHP"));
         Employee employee6 = new Employee("Aneta","Pusowka",32, List.of("Pascale","PHP"));
         Employee employee7 = new Employee("Krzysztof","Nakowski",31, List.of("Java","PHP"));
 
@@ -216,4 +216,14 @@ public class Stream {
         System.out.println();
         System.out.println(employees);
     }
+
+    @Test
+    public void test() {
+        Map<String, List<Employee>> collect = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getFirstName));
+
+        System.out.println(collect.get("Kamil").size());
+
+    }
+
 }
