@@ -1,9 +1,11 @@
 package com.java.interfaces.stream;
 
+import com.java.Array;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class Stream {
@@ -204,6 +206,10 @@ public class Stream {
         System.out.println();
     }
 
+
+
+
+
     @Test
     void peekOperation() {
         //support debugging
@@ -219,11 +225,31 @@ public class Stream {
 
     @Test
     public void test() {
-        Map<String, List<Employee>> collect = employees.stream()
+        Map<String, Integer> collect = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getFirstName, Collectors.summingInt(Employee::getAge)));
+
+        System.out.println(collect);
+
+
+        Map<String, List<Employee>> collect2 = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getFirstName, Collectors.mapping(Function.identity(),
+                        Collectors.collectingAndThen(Collectors.toList(), e -> e.stream().sorted(Comparator.comparingInt(Employee::getAge)).collect(Collectors.toList())))));
+
+        System.out.println(collect2);
+
+
+        employees.stream()
                 .collect(Collectors.groupingBy(Employee::getFirstName));
 
-        System.out.println(collect.get("Kamil").size());
 
+
+//        Map<String, Long> counted = list.stream()
+//                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+//
+//        Map<String, Long> sorted = counted.entrySet().stream()
+//                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
+//                .limit(10)
+//                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
     }
 
 }
