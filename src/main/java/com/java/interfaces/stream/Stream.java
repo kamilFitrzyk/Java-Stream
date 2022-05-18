@@ -206,10 +206,6 @@ public class Stream {
         System.out.println();
     }
 
-
-
-
-
     @Test
     void peekOperation() {
         //support debugging
@@ -243,13 +239,26 @@ public class Stream {
 
 
 
-//        Map<String, Long> counted = list.stream()
-//                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
-//
-//        Map<String, Long> sorted = counted.entrySet().stream()
-//                .sorted(Collections.reverseOrder(Map.Entry.comparingByValue()))
-//                .limit(10)
-//                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));
+
+    }
+
+    @Test
+    public void groupByAndSortDescendingLimit() {
+        Map<String, Integer> collect = employees.stream()
+                .collect(Collectors.groupingBy(Employee::getFirstName, Collectors.summingInt(Employee::getAge)));
+
+        LinkedHashMap<String, Integer> collect1 = collect
+                .entrySet()
+                .stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue()
+                .reversed())
+                .limit(3)
+                .collect(Collectors.toMap(e -> e.getKey(), e -> e.getValue(), (e1, e2) -> e2, LinkedHashMap::new));
+
+        for (Map.Entry<String, Integer> entry : collect1.entrySet()) {
+            System.out.println(entry.getKey() + " - " + entry.getValue());
+        }
+
     }
 
 }
